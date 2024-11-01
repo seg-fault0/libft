@@ -24,7 +24,7 @@ AR = ar
 
 all: $(LIB)
 
-$(LIB):$(OBG) libft.h
+$(LIB):$(OBG) libft.h clean
 	$(AR) -rc $@ $^
 
 %.o:%.c
@@ -37,3 +37,5 @@ fclean: clean
 	rm -f $(LIB)
 
 re: fclean all
+
+.PHONY: clean

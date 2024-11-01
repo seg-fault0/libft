@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 11:47:35 by wimam             #+#    #+#             */
-/*   Updated: 2024/10/27 12:16:15 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/01 17:55:43 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if (s[i] == c)
+	if (s[i] == (unsigned char) c)
 		return ((char *)&s[i]);
 	return (NULL);
 }
