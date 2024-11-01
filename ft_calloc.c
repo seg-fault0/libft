@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 14:53:47 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/01 13:52:24 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/01 17:01:27 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t	x;
 
 	if (count == 0 || size == 0)
-		return ;
+		return (NULL);
 	x = count * size;
 	if (x / count != size)
 		return (NULL);

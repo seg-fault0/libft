@@ -6,11 +6,23 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 16:16:07 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/01 09:43:42 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/01 16:31:48 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static	int	localstrlen(const char *str)
+{
+	int	len;
+
+	if (!str)
+		return (0);
+	len = 0;
+	while (str[len] != '\0')
+		len++;
+	return (len);
+}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -18,7 +30,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	char	*buffer;
 
-	len = ft_strlen(s1) + ft_strlen(s2);
+	len = localstrlen(s1) + localstrlen(s2);
 	buffer = malloc(len + 1);
 	if (!buffer || !s1 || !s2)
 		return (NULL);
