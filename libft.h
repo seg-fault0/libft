@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:27:06 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/01 13:51:45 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/02 11:19:49 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <string.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int i);

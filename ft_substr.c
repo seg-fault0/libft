@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:04:00 by wimam             #+#    #+#             */
-/*   Updated: 2024/10/28 12:04:34 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/02 11:57:52 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char		*buffer;
 
 	i = 0;
-	if (s == NULL)
+	if (!s)
 		return (NULL);
 	if (start >= (unsigned int)ft_strlen(s))
 		return (ft_strdup(""));

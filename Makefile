@@ -24,7 +24,7 @@ AR = ar
 
 all: $(LIB)
 
-$(LIB):$(OBG) libft.h clean
+$(LIB):$(OBG) libft.h
 	$(AR) -rc $@ $^
 
 %.o:%.c

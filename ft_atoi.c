@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 09:25:32 by wimam             #+#    #+#             */
-/*   Updated: 2024/10/30 10:32:02 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/02 11:31:02 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,25 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
+
+/*
+#include <stdio.h>
+int main()
+{
+	printf("expected : 123         |  got : %d\n", ft_atoi("123"));
+	printf("expected :-123         |  got : %d\n", ft_atoi("-123"));
+	printf("expected : 0           |  got : %d\n", ft_atoi("0"));
+	printf("expected : 123         |  got : %d\n", ft_atoi("123"));
+	printf("expected : 2147483647  |  got : %d\n", ft_atoi("2147483647"));
+	printf("expected :-2147483648  |  got : %d\n", ft_atoi("-2147483648"));
+	printf("expected : 123         |  got : %d\n", ft_atoi("   123"));
+	printf("expected : 123         |  got : %d\n", ft_atoi("123   "));
+	printf("expected : 0           |  got : %d\n", ft_atoi("abc123"));
+	printf("expected : 0           |  got : %d\n", ft_atoi("--123"));
+	printf("expected : 0           |  got : %d\n", ft_atoi(""));
+	printf("expected : 0           |  got : %d\n", ft_atoi("0x123"));
+	printf("expected : 0           |  got : %d\n", ft_atoi("-0"));
+	return (0);
+}
+// cc ft_atoi.c && ./a.out
+*/

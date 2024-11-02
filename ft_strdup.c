@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:24:48 by wimam             #+#    #+#             */
-/*   Updated: 2024/10/27 12:07:34 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/02 12:41:31 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s1)
 
 	len = ft_strlen(s1);
 	buffer = malloc(len + 1);
-	if (buffer == NULL)
+	if (!buffer)
 		return (NULL);
 	i = 0;
 	while (s1[i] != '\0')

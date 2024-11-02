@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 10:15:17 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/01 17:06:14 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/02 11:40:57 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ static char	*ft_fill(char const *s, char c)
 	while (s[len] && s[len] != c)
 		len++;
 	buffer = malloc(len + 1);
+	if (!buffer)
+		return (NULL);
 	ft_memcpy(buffer, s, len);
 	buffer[len] = '\0';
 	return (buffer);
