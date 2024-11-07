@@ -6,21 +6,22 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 09:25:32 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/02 11:31:02 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/07 13:04:27 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+#define L_MAX 9223372036854775807UL
+#define L_MIN 9223372036854775808UL
+
+static	int	ft_skip(const char *str, const char *ret)
 {
-	int		i;
-	int		sign;
-	int		result;
+	int	i;
+	int	sign;
 
 	i = 0;
 	sign = 1;
-	result = 0;
 	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
 		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
 		i++;
@@ -30,32 +31,54 @@ int	ft_atoi(const char *str)
 			sign = -1;
 		i++;
 	}
+	if (ft_memcmp(ret, "index", 5) == 0)
+		return (i);
+	else
+		return (sign);
+}
+
+int	ft_atoi(const char *str)
+{
+	int				i;
+	int				sign;
+	long			result;
+	unsigned long	tmp_result;
+
+	i = ft_skip(str, "index");
+	sign = ft_skip(str, "sign");
+	result = 0;
+	tmp_result = 0;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		result = (result * 10) + (str[i] - '0');
+		result = result * 10 + (str[i] - '0');
+		tmp_result = ((tmp_result * 10 + (str[i] - '0')));
+		if (tmp_result >= L_MAX && sign == 1)
+			return (-1);
+		if (tmp_result >= L_MIN && sign == -1)
+			return (0);
 		i++;
 	}
 	return (result * sign);
 }
 
-/*
-#include <stdio.h>
-int main()
-{
-	printf("expected : 123         |  got : %d\n", ft_atoi("123"));
-	printf("expected :-123         |  got : %d\n", ft_atoi("-123"));
-	printf("expected : 0           |  got : %d\n", ft_atoi("0"));
-	printf("expected : 123         |  got : %d\n", ft_atoi("123"));
-	printf("expected : 2147483647  |  got : %d\n", ft_atoi("2147483647"));
-	printf("expected :-2147483648  |  got : %d\n", ft_atoi("-2147483648"));
-	printf("expected : 123         |  got : %d\n", ft_atoi("   123"));
-	printf("expected : 123         |  got : %d\n", ft_atoi("123   "));
-	printf("expected : 0           |  got : %d\n", ft_atoi("abc123"));
-	printf("expected : 0           |  got : %d\n", ft_atoi("--123"));
-	printf("expected : 0           |  got : %d\n", ft_atoi(""));
-	printf("expected : 0           |  got : %d\n", ft_atoi("0x123"));
-	printf("expected : 0           |  got : %d\n", ft_atoi("-0"));
-	return (0);
-}
-// cc ft_atoi.c && ./a.out
-*/
+
+// #include <stdio.h>
+// int main()
+// {
+
+// 	printf("------ over flow -----\n\n");
+// 	printf("expected : %d | got : %d\n", atoi("9223372036854775805"), ft_atoi("9223372036854775805"));
+// 	printf("expected : %d | got : %d\n", atoi("9223372036854775806"), ft_atoi("9223372036854775806"));
+// 	printf("expected : %d | got : %d\n", atoi("9223372036854775807"), ft_atoi("9223372036854775807"));  // MAX
+// 	printf("expected : %d | got : %d\n", atoi("9223372036854775808"), ft_atoi("9223372036854775808"));
+// 	printf("expected : %d | got : %d\n", atoi("9223372036854775809"), ft_atoi("9223372036854775809"));
+
+
+// 	printf("------ under flow -----\n\n");
+// 	printf("expected : %d | got : %d\n", atoi("-9223372036854775806"), ft_atoi("-9223372036854775806"));
+// 	printf("expected : %d | got : %d\n", atoi("-9223372036854775807"), ft_atoi("-9223372036854775807"));
+// 	printf("expected : %d | got : %d\n", atoi("-9223372036854775808"), ft_atoi("-9223372036854775808")); // MIN
+// 	printf("expected : %d | got : %d\n", atoi("-9223372036854775809"), ft_atoi("-9223372036854775809"));
+// 	printf("expected : %d | got : %d\n", atoi("-9223372036854775809"), ft_atoi("-9223372036854775810"));
+// 	return (0);
+// }
