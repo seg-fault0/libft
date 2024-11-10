@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 16:16:07 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/01 16:31:48 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/10 09:50:14 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	char	*buffer;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len = localstrlen(s1) + localstrlen(s2);
 	buffer = malloc(len + 1);
-	if (!buffer || !s1 || !s2)
+	if (!buffer)
 		return (NULL);
 	i = 0;
 	while (*s1)

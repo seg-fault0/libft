@@ -6,12 +6,15 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 12:27:06 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/02 11:19:49 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/10 09:22:50 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# define L_MAX 9223372036854775807UL
+# define L_MIN 9223372036854775808UL
 
 # include <unistd.h>
 # include <stdlib.h>

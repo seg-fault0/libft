@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:30:04 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/02 11:34:24 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/10 09:25:12 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	char	*buffer;
-
-	buffer = (char *)s;
-	i = 0;
-	while (i < n)
-	{
-		buffer[i] = 0;
-		i++;
-	}
+	ft_memset(s, 0, n);
 }

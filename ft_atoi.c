@@ -6,14 +6,11 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 09:25:32 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/07 13:04:27 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/10 09:22:35 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#define L_MAX 9223372036854775807UL
-#define L_MIN 9223372036854775808UL
 
 static	int	ft_skip(const char *str, const char *ret)
 {
@@ -60,25 +57,3 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-
-
-// #include <stdio.h>
-// int main()
-// {
-
-// 	printf("------ over flow -----\n\n");
-// 	printf("expected : %d | got : %d\n", atoi("9223372036854775805"), ft_atoi("9223372036854775805"));
-// 	printf("expected : %d | got : %d\n", atoi("9223372036854775806"), ft_atoi("9223372036854775806"));
-// 	printf("expected : %d | got : %d\n", atoi("9223372036854775807"), ft_atoi("9223372036854775807"));  // MAX
-// 	printf("expected : %d | got : %d\n", atoi("9223372036854775808"), ft_atoi("9223372036854775808"));
-// 	printf("expected : %d | got : %d\n", atoi("9223372036854775809"), ft_atoi("9223372036854775809"));
-
-
-// 	printf("------ under flow -----\n\n");
-// 	printf("expected : %d | got : %d\n", atoi("-9223372036854775806"), ft_atoi("-9223372036854775806"));
-// 	printf("expected : %d | got : %d\n", atoi("-9223372036854775807"), ft_atoi("-9223372036854775807"));
-// 	printf("expected : %d | got : %d\n", atoi("-9223372036854775808"), ft_atoi("-9223372036854775808")); // MIN
-// 	printf("expected : %d | got : %d\n", atoi("-9223372036854775809"), ft_atoi("-9223372036854775809"));
-// 	printf("expected : %d | got : %d\n", atoi("-9223372036854775809"), ft_atoi("-9223372036854775810"));
-// 	return (0);
-// }

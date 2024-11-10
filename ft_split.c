@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 10:15:17 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/02 11:40:57 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/10 09:47:22 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,23 +69,3 @@ char	**ft_split(char const *s, char c)
 	buffer[row] = NULL;
 	return (buffer);
 }
-
-/*
-#include <stdio.h>
-int main()
-{
-	char *str = "hello world my name is walid";
-	char c = ' ';
-	int row = ft_row(str, c);
-
-	char **buffer = ft_split(str, c);
-
-	printf("row = %d \n", row);
-	
-	for(int i = 0; i <= row; i++)
-		printf("buffer[%d] = %s \n", i, buffer[i]);
-
-	return (0);
-}
-// cc ft_split.c ft_memcpy.c
-*/
