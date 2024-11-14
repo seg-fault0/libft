@@ -6,29 +6,15 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 11:40:18 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/02 12:02:48 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/14 21:00:20 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	set_check(const	char s, const char *set)
-{
-	int	i;
-
-	i = 0;
-	while (set[i] != '\0')
-	{
-		if (set[i] == s)
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
 static int	end_trim(const char *s1, const char *set, int len)
 {
-	while (len > 0 && set_check(s1[len - 1], set))
+	while (len > 0 && ft_strchr(set, s1[len - 1]))
 		len--;
 	return (len);
 }
@@ -40,7 +26,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1)
 		return (NULL);
-	while (*s1 != '\0' && set_check(*s1, set))
+	while (*s1 != '\0' && ft_strchr(set, *s1))
 		s1++;
 	len = ft_strlen(s1);
 	len = end_trim(s1, set, len);

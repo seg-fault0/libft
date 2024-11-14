@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 15:19:25 by wimam             #+#    #+#             */
-/*   Updated: 2024/10/22 15:19:29 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/14 20:55:22 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (fd < 0)
+		return ;
 	ft_putstr_fd (s, fd);
 	ft_putchar_fd ('\n', fd);
 }
