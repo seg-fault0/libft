@@ -6,13 +6,13 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 16:22:19 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/10 09:31:20 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/16 12:21:11 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	get_num_length(int n)
+static int	ft_nblen(int n)
 {
 	int	length;
 
@@ -30,27 +30,27 @@ static int	get_num_length(int n)
 
 char	*ft_itoa(int n)
 {
-	char	*result;
-	int		length;
-	long	num;
+	char	*ret;
+	int		len;
+	long	nb;
 
-	num = n;
-	length = get_num_length(n);
-	result = (char *)malloc(length + 1);
-	if (!result)
+	nb = n;
+	len = ft_nblen(n);
+	ret = (char *)malloc(len + 1);
+	if (!ret)
 		return (NULL);
-	result[length] = '\0';
-	if (num < 0)
+	ret[len] = '\0';
+	if (nb < 0)
 	{
-		result[0] = '-';
-		num = -num;
+		ret[0] = '-';
+		nb *= -1;
 	}
-	else if (num == 0)
-		result[0] = '0';
-	while (num > 0)
+	else if (nb == 0)
+		ret[0] = '0';
+	while (nb > 0)
 	{
-		result[--length] = (num % 10) + '0';
-		num /= 10;
+		ret[--len] = (nb % 10) + '0';
+		nb /= 10;
 	}
-	return (result);
+	return (ret);
 }
