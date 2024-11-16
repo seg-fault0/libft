@@ -6,13 +6,13 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 09:25:32 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/10 09:22:35 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/15 16:12:41 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	ft_skip(const char *str, const char *ret)
+static	int	ft_skip(const char *str, const char ret)
 {
 	int	i;
 	int	sign;
@@ -28,10 +28,11 @@ static	int	ft_skip(const char *str, const char *ret)
 			sign = -1;
 		i++;
 	}
-	if (ft_memcmp(ret, "index", 5) == 0)
+	if (ret == 'i')
 		return (i);
-	else
+	else if (ret == 's')
 		return (sign);
+	return (0);
 }
 
 int	ft_atoi(const char *str)
@@ -41,8 +42,8 @@ int	ft_atoi(const char *str)
 	long			result;
 	unsigned long	tmp_result;
 
-	i = ft_skip(str, "index");
-	sign = ft_skip(str, "sign");
+	i = ft_skip(str, 'i');
+	sign = ft_skip(str, 's');
 	result = 0;
 	tmp_result = 0;
 	while (str[i] >= '0' && str[i] <= '9')
