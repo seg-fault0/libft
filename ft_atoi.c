@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 09:25:32 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/18 17:05:22 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/18 17:18:47 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ static	int	ft_skip(const char *str, const char ret)
 	return (0);
 }
 
-static 	int ft_numlen(const char *str)
+static	int	ft_numlen(const char *str)
 {
 	int	len;
 
 	len = 0;
-	while(str[len] != '\0' && ft_isdigit(str[len]))
+	while (str[len] != '\0' && ft_isdigit(str[len]))
 		len++;
 	return (len);
 }
@@ -62,11 +62,11 @@ int	ft_atoi(const char *str)
 	{
 		result = result * 10 + (str[i] - '0');
 		tmp_result = ((tmp_result * 10 + (str[i] - '0')));
-		if ((tmp_result >= L_MAX && sign == 1)) //OF
+		if ((tmp_result >= L_MAX && sign == 1))
 			return (-1);
-		if (tmp_result >= L_MIN && sign == -1) //UF
+		if (tmp_result >= L_MIN && sign == -1)
 			return (0);
-		if (len > 19 && sign == 1) //ULLOF
+		if (len > 19 && sign == 1)
 			return (-1);
 		i++;
 	}
