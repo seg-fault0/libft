@@ -34,7 +34,7 @@ clean:
 	rm -f *.o
 
 fclean: clean
-	rm -f $(LIB)
+	rm -f $(NAME)
 
 re: fclean all
 
