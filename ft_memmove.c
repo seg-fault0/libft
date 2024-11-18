@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:51:58 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/02 11:21:03 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/18 23:34:52 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	i = 0;
 	if (!dst && !src)
 		return (NULL);
+	if (d == s)
+		return (dst);
 	if (d > s)
 		while (len-- > 0)
 			d[len] = s[len];
