@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 21:48:02 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/10 09:40:52 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/18 15:44:35 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	i = 0;
 	if (!src && !dst)
 		return (NULL);
+	if (dst == src)
+		return (dst);
 	tmpdst = (char *)dst;
 	tmpsrc = (char *)src;
 	while (i < n)

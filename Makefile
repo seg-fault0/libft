@@ -17,14 +17,14 @@ SRC =	ft_atoi.c		ft_putstr_fd.c	\
 		ft_putnbr_fd.c	ft_toupper.c	\
 
 OBG = $(SRC:.c=.o)
-LIB = libft.a
+NAME = libft.a
 CC = cc
 FLAGS = -Wall -Wextra -Werror
 AR = ar
 
-all: $(LIB)
+all: $(NAME)
 
-$(LIB):$(OBG) 
+$(NAME):$(OBG) 
 	$(AR) -rc $@ $^
 
 %.o:%.c libft.h
