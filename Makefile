@@ -24,14 +24,14 @@ AR = ar
 
 all: $(NAME)
 
-$(NAME):$(OBG) 
+$(NAME):$(OBG)
 	$(AR) -rc $@ $^
 
 %.o:%.c libft.h
-	$(CC) -c $(FLAGS) $< -o $@ 
+	$(CC) -c $(FLAGS) $< -o $@
 
 clean:
-	rm -f *.o
+	rm -f $(OBG)
 
 fclean: clean
 	rm -f $(NAME)
