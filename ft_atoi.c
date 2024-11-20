@@ -6,7 +6,7 @@
 /*   By: wimam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 09:25:32 by wimam             #+#    #+#             */
-/*   Updated: 2024/11/18 17:18:47 by wimam            ###   ########.fr       */
+/*   Updated: 2024/11/20 22:20:08 by wimam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static	int	ft_skip(const char *str, const char ret)
 			sign = -1;
 		i++;
 	}
+	while (str[i] == '0')
+		i++;
 	if (ret == 'i')
 		return (i);
 	else if (ret == 's')
